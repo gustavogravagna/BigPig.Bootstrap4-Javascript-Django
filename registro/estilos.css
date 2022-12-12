@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  color: transparent;
+  transition: color var(--animation-time);
+  transition-delay: var(--animation-time);
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  padding-top: 100px;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+:root {
+  --bg-color: #13161f;
+  --primary-color: #74b9ff;
+  --secondary-color: #babfc2;
+  --animation-time: 0.5s;
+  --line-height: 3px;
+  --line-width: 70px;
+  --circle-size: 30px;
+  --card-width: 300px;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.line,
+.circle {
+  background: var(--secondary-color);
+}
+
+.innerLine,
+.innerCircle {
+  width: 0px;
+  background: var(--primary-color);
+  transition: width var(--animation-time);
+}
+
+.line {
+  height: var(--line-height);
+  width: var(--line-width);
+}
+
+.innerLine {
+  height: var(--line-height);
+}
+
+.circle {
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.innerCircle {
+  height: var(--circle-size);
+  transition-delay: var(--animation-time);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: var(--card-width);
+  background: white;
+  box-shadow: 0px 1px 23px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.content,
+.card-footer {
+  width: 100%;
+}
+
+.card-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-footer #btn_next {
+  background: var(--primary-color);
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.card-footer #btn_prev {
+  background: none;
+  border: none;
+  padding: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  opacity: 0;
+}
+
+button {
+  transition: opacity var(--animation-time);
+}
+
+.content {
+  width: var(--card-width);
+  overflow: hidden;
+}
+
+.card .content ul {
+  width: calc(var(--card-width) * 3);
+  display: flex;
+  transition: all var(--animation-time);
+}
+
+.card .content li {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: var(--card-width);
+  text-align: justify;
+}
+
+.card .content li label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='date'] {
+  border: none;
+  outline: none;
+  color: #2c3e50;
+  border-radius: 6px;
+  background-color: rgb(240, 240, 240);
+  height: 30px;
+  padding: 5px;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='date']:focus {
+  border-bottom: 1px solid var(--primary-color);
+}
